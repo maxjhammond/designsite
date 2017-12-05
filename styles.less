@@ -1,0 +1,46 @@
+@import "default";
+
+//DEFAULTS
+
+*{
+    &:focus{
+        outline: none;
+    }
+}
+
+html{
+    background: url('bg.jpg') no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1, p{
+    margin: 0 0 10px 0;
+}
+
+body{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: @light;
+    color: @white;
+}
+
+img{
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+//MAIN STYLES
+
+header{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+}
