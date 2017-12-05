@@ -3,6 +3,12 @@
 //DEFAULTS
 
 *{
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
     &:focus{
         outline: none;
     }
@@ -24,12 +30,14 @@ body{
 }
 
 img{
-    -khtml-user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
     width: 100%;
+}
+a{
+    color: unset;
+    text-decoration: none;
+    &:visited{
+        color: unset;
+    }
 }
 
 //MAIN STYLES
@@ -50,6 +58,8 @@ header{
     }
     .hero{
         background-image: url('https://i2-prod.manchestereveningnews.co.uk/incoming/article11041917.ece/ALTERNATES/s1200/MediaCityUK-July-2013-1.jpg');
+        background-color: red;
+        background-blend-mode: difference;
         height: 630px;
         .hero-title{
             color: @white;
@@ -67,17 +77,35 @@ header{
         text-align: right;
         display: block;
         li{
-            position: relative;
-            margin-right: 20px;
-            &::after{
-                position: absolute;
-                content: '';
-                width: 15px;
-                height: 2px;
-                background: @black;
-                top: 50%;
-                right: -20px;
+            a {
+                position: relative;
+                margin: 0 20px 5px 0;
+                transition: all ease 0.4s;
+                cursor: pointer;
+                display: inline-block;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 15px;
+                    height: 2px;
+                    background: @black;
+                    top: 50%;
+                    right: -20px;
+                    transition: all ease 0.2s;
+                }
+                &:hover {
+                    margin-right: 0;
+                    &::after {
+                        width: 100%;
+                        top: unset;
+                        bottom: -2px;
+                        right: 0;
+                    }
+                }
             }
         }
+    }
+    @media (max-width: 1024px){
+        margin: 0 10px;
     }
 }
