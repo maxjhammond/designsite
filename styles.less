@@ -9,8 +9,7 @@
 }
 
 html{
-    background: url('bg.jpg') no-repeat;
-    background-size: cover;
+    background: @lightgrey;
     min-height: 100vh;
 }
 
@@ -20,9 +19,8 @@ h1, p{
 
 body{
     margin: 0;
-    font-family: 'Lato', sans-serif;
-    font-weight: @light;
-    color: @white;
+    font-family: 'HelveticaNeueMed', sans-serif;
+    font-size: 0.8em;
 }
 
 img{
@@ -31,6 +29,7 @@ img{
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    width: 100%;
 }
 
 //MAIN STYLES
@@ -38,9 +37,47 @@ img{
 header{
     text-align: center;
     padding: 20px 0;
+    font-family: 'HelveticaNeueLTDExt', sans-serif;
 }
 
 .container{
     max-width: 1024px;
     margin: 0 auto;
+    h2{
+        border-bottom: 1px solid;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    .hero{
+        background-image: url('https://i2-prod.manchestereveningnews.co.uk/incoming/article11041917.ece/ALTERNATES/s1200/MediaCityUK-July-2013-1.jpg');
+        height: 630px;
+        .hero-title{
+            color: @white;
+            text-align: center;
+            padding-top: 10%;
+            font-size: 3em;
+        }
+    }
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .projects{
+        text-align: right;
+        display: block;
+        li{
+            position: relative;
+            margin-right: 20px;
+            &::after{
+                position: absolute;
+                content: '';
+                width: 15px;
+                height: 2px;
+                background: @black;
+                top: 50%;
+                right: -20px;
+            }
+        }
+    }
 }
